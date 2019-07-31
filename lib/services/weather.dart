@@ -31,3 +31,6 @@ class WeatherModel {
     }
   }
 }
+//double temperature = DecodedData['main']['temp'];
+//int condition = DecodedData['weather'][0]['id'];
+//String cityname = DecodedData['name'];
