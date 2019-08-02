@@ -5,7 +5,7 @@ class getNetwork {
   getNetwork(this.url);
   final String url;
 
-void getData() async {
+ dynamic getData() async {
   Http.Response response = await Http.get(url);
   if (response.statusCode == 200) {
     String data = response.body;
