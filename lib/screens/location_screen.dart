@@ -25,6 +25,13 @@ class _LocationScreenState extends State<LocationScreen> {
 
   void UpdateUI(dynamic data){
     setState(() {
+      if(data==null){
+        temperature=0;
+        WeatherIcon='error';
+        WeatherMssg='Unable to Connect';
+        cityName='';
+        return;
+      }
       temperature = data['main']['temp'];
       var condition = data['weather'][0]['id'];
       WeatherIcon = Weather.getWeatherIcon(condition);
