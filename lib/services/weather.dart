@@ -6,13 +6,15 @@ class WeatherModel {
   double lon;
   double lat;
 
-  void getLocationWeather() async{
+  Future<dynamic> getLocationWeather() async{
     Location location = Location();
     await location.getCurrentLocation();
     lat=location.latitude;
     lon=location.longitude;
 
     getNetwork getnetwork = getNetwork('https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apikey&units=metric');
+    var weatherdata = await getnetwork.getData();
+    return weatherdata;
   }
   String getWeatherIcon(int condition) {
     if (condition < 300) {

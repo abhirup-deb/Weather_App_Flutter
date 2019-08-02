@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:clima/services/weather.dart';
 import 'location_screen.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -17,8 +17,9 @@ class _LoadingScreenState extends State<LoadingScreen> {
     getLocationData();
   }
   void getLocationData() async{
+    WeatherModel weatherModel = WeatherModel();
+    var weatherdata = await weatherModel.getLocationWeather();
 
-    var weatherdata = await getnetwork.getData();
 
     Navigator.push(context, MaterialPageRoute(builder: (context){
       return LocationScreen(Locationweather: weatherdata,);
