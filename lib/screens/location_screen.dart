@@ -11,6 +11,8 @@ class LocationScreen extends StatefulWidget {
 
 class _LocationScreenState extends State<LocationScreen> {
   int temperature;
+  int condition;
+  String cityName;
   @override
   void initState() {
     super.initState();
@@ -19,6 +21,8 @@ class _LocationScreenState extends State<LocationScreen> {
 
   void UpdateUI(dynamic data){
     temperature = data['main']['temp'];
+    condition = data['weather'][0]['id'];
+    cityName = data['name'];
   }
   @override
   Widget build(BuildContext context) {
