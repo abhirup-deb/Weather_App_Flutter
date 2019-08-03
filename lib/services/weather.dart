@@ -6,6 +6,12 @@ class WeatherModel {
   double lon;
   double lat;
 
+  Future<dynamic> getTypedLocation(String cityName) async{
+    getNetwork getnetwork =  getNetwork('https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apikey&units=metric');
+    var weatherdata = await getnetwork.getData();
+    return weatherdata;
+  }
+
   Future<dynamic> getLocationWeather() async{
     Location location = Location();
     await location.getCurrentLocation();
