@@ -9,6 +9,7 @@ class WeatherModel {
   Future<dynamic> getTypedLocation(String cityName) async{
     getNetwork getnetwork =  getNetwork('https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apikey&units=metric');
     var weatherdata = await getnetwork.getData();
+    print(weatherdata);
     return weatherdata;
   }
 
@@ -20,6 +21,7 @@ class WeatherModel {
 
     getNetwork getnetwork = getNetwork('https://api.openweathermap.org/data/2.5/weather?lat=$lat&lon=$lon&appid=$apikey&units=metric');
     var weatherdata = await getnetwork.getData();
+    print(weatherdata);
     return weatherdata;
   }
   String getWeatherIcon(int condition) {
