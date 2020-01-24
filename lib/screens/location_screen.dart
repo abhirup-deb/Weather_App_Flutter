@@ -95,7 +95,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 child: Row(
                   children: <Widget>[
                     Text(
-                      '$temperature°C',
+                      ' $temperature°C ',
                       style: kTempTextStyle,
                     ),
                     Text(
@@ -106,7 +106,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(right: 15.0),
+                padding: EdgeInsets.only(right: 1.0),
                 child: Text(
                   "$WeatherMssg",
                   textAlign: TextAlign.right,

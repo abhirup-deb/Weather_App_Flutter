@@ -32,15 +32,15 @@ class WeatherModel {
     } else if (condition < 600) {
       return '☔';
     } else if (condition < 700) {
-      return '☃';
+      return '☃️';
     } else if (condition < 800) {
-      return '🌫';
+      return '🌁';
     } else if (condition == 800) {
       return '☀';
     } else if (condition <= 804) {
       return '☁';
     } else {
-      return '🤷‍';
+      return '🤷‍♀️';
     }
   }
 
